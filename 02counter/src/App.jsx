@@ -10,23 +10,31 @@ function App() {
   //let counter = 10;
 
   const addValue = () => {
-    console.log("clicked",counter)
+    console.log("clicked", counter)
     // counter+=1
-    chaiCounter(counter +1)
+    if (counter < 20) { chaiCounter(counter + 1) }
+
+  }
+
+
+
+  const decreaseValue = () => {
+    if (counter > 0) { chaiCounter(counter - 1) }
+
   }
 
   return (
-   <>
-   <h1>This is slow</h1>
-   <h2>Counter Value : {counter}</h2>
+    <>
+      <h1>This is slow</h1>
+      <h2>Counter Value : {counter}</h2>
 
 
-   <button
-   onClick={addValue}>Add Value {counter}</button>
-   <br/><br></br>
-   <button>Remove Value {counter}</button>
-   <p> footer: {counter}</p>
-   </>
+      <button
+        onClick={addValue}>Add Value </button>
+      <br /><br></br>
+      <button onClick={decreaseValue}>Remove Value </button>
+      <p>Very Very Slow</p>
+    </>
   )
 }
 
