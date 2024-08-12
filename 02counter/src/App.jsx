@@ -5,14 +5,22 @@ import './App.css'
 
 function App() {
 
-  let [counter, chaiCounter] = useState(10)
+  let [counter, chaiCounter] = useState(6)
   //chaicounter ka aur kuch bhi rakh sakte hai name
   //let counter = 10;
 
   const addValue = () => {
     console.log("clicked", counter)
     // counter+=1
-    if (counter < 20) { chaiCounter(counter + 1) }
+    if (counter < 20) 
+      { 
+        chaiCounter(prevCounter => prevCounter + 1)
+        chaiCounter(prevCounter => prevCounter + 1)
+        chaiCounter(prevCounter => prevCounter + 1)
+        chaiCounter(prevCounter => prevCounter + 1)
+        chaiCounter(prevCounter => prevCounter + 1)
+
+       }
 
   }
 
