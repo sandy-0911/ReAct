@@ -1,10 +1,13 @@
 
-
+import First from "./First.jsx"
 function App() {
   
 
   return (
-    <h1>React with Vite</h1>
+    <>
+    <First/>
+    <h1>Successfully imported</h1>
+    </>
   )
 }
 
