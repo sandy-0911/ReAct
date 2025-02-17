@@ -5,43 +5,37 @@ import './App.css'
 
 function App() {
 
-  let [counter, chaiCounter] = useState(6)
-  //chaicounter ka aur kuch bhi rakh sakte hai name
-  //let counter = 10;
+  //let defaultvalue = 5;
+  //UI mai useless hai, update hi nahi hoga
+
+  let [counter, setCounter] = useState(15);
 
   const addValue = () => {
-    console.log("clicked", counter)
-    // counter+=1
-    if (counter < 20) 
-      { 
-        chaiCounter(prevCounter => prevCounter + 1)
-        chaiCounter(prevCounter => prevCounter + 1)
-        chaiCounter(prevCounter => prevCounter + 1)
-        chaiCounter(prevCounter => prevCounter + 1)
-        chaiCounter(prevCounter => prevCounter + 1)
-
-       }
-
+    //defaultvalue++;
+    if (counter < 20){
+      setCounter(counter + 1)
+    }
+    console.log("value added", counter);
   }
 
-
-
-  const decreaseValue = () => {
-    if (counter > 0) { chaiCounter(counter - 1) }
-
-  }
+  const decValue = () => {
+    if (counter >0){
+      setCounter(counter - 1);
+    }
+    console.log("value decreased", counter);  }
 
   return (
     <>
-      <h1>This is slow</h1>
-      <h2>Counter Value : {counter}</h2>
-
-
+      <h2>I'm doing this Myself</h2>
+      <button>Counter Value : {counter} </button>
+      <br />
+      <br />
       <button
-        onClick={addValue}>Add Value </button>
-      <br /><br></br>
-      <button onClick={decreaseValue}>Remove Value </button>
-      <p>Very Very Slow</p>
+      onClick={addValue}>Add Value </button>
+      <br />
+      <br />
+      <button
+      onClick={decValue}>Decrease Value</button>
     </>
   )
 }
